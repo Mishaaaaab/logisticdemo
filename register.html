@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration — LogisticDemo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">LogisticDemo</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Registration</a>
+      <a href="login.html">Login</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+  </header>
+
+  <main class="page-wrap">
+    <section class="form-card">
+      <h1>Registration</h1>
+      <p class="muted">Choose a role: a client creates requests, a driver accepts shipments.</p>
+      <form id="registerForm">
+        <label>Name
+          <input type="text" id="regName" required placeholder="Example: Michael" />
+        </label>
+        <label>Email
+          <input type="email" id="regEmail" required placeholder="name@email.com" />
+        </label>
+        <label>Password
+          <input type="password" id="regPassword" required minlength="3" placeholder="Minimum 3 characters" />
+        </label>
+        <label>Role
+          <select id="regRole" required>
+            <option value="client">Client</option>
+            <option value="driver">Driver</option>
+          </select>
+        </label>
+
+        <div id="driverFields" class="hidden extra-fields">
+          <label>How many kg the driver can carry
+            <input type="number" id="regMaxWeight" min="1" placeholder="Example: 1200" />
+          </label>
+          <label>How many m³ the driver can carry
+            <input type="number" id="regMaxVolume" min="1" step="0.1" placeholder="Example: 15" />
+          </label>
+        </div>
+
+        <button class="btn primary full" type="submit">Create account</button>
+        <p id="registerMessage" class="message"></p>
+      </form>
+      <p class="small-text">Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
