@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Driver dashboard — manage your capacity and accepted shipments on LogisticDemo." />
+  <title>Driver dashboard — LogisticDemo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-role-page="driver">
+  <header class="site-header">
+    <a class="logo" href="index.html">LogisticDemo</a>
+    <nav>
+      <a href="driver.html">Driver dashboard</a>
+      <a href="tracking.html">Tracking</a>
+      <a href="calculator.html">Calculator</a>
+      <button class="link-button" id="logoutBtn">Log out</button>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <section class="panel">
+      <h1>Driver dashboard</h1>
+      <p id="driverWelcome" class="muted"></p>
+
+      <h2>My capacity</h2>
+      <form id="capacityForm" class="grid-form">
+        <label>Maximum weight, kg
+          <input type="number" id="driverMaxWeight" min="1" required />
+        </label>
+        <label>Maximum volume, m³
+          <input type="number" id="driverMaxVolume" min="0.1" step="0.1" required />
+        </label>
+        <button class="btn primary" type="submit">Save</button>
+      </form>
+      <p id="capacityMessage" class="message"></p>
+    </section>
+
+    <section class="panel">
+      <h2>All requests</h2>
+      <p class="muted">All customer requests are shown here. You can accept only free requests that fit your weight and volume capacity.</p>
+      <div id="availableOrders" class="cards-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>My accepted shipments</h2>
+      <div id="driverOrders" class="cards-list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Client dashboard — manage your shipment requests on LogisticDemo." />
+  <title>Client dashboard — LogisticDemo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-role-page="client">
+  <header class="site-header">
+    <a class="logo" href="index.html">LogisticDemo</a>
+    <nav>
+      <a href="client.html">Client dashboard</a>
+      <a href="tracking.html">Tracking</a>
+      <a href="calculator.html">Calculator</a>
+      <button class="link-button" id="logoutBtn">Log out</button>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <section class="panel">
+      <h1>Client dashboard</h1>
+      <p id="clientWelcome" class="muted"></p>
+
+      <h2>Create shipment request</h2>
+      <form id="orderForm" class="grid-form">
+        <label>From
+          <input type="text" id="orderFrom" required placeholder="Riga" />
+        </label>
+        <label>To
+          <input type="text" id="orderTo" required placeholder="Tallinn" />
+        </label>
+        <label>Weight, kg
+          <input type="number" id="orderWeight" required min="1" />
+        </label>
+        <label>Volume, m³
+          <input type="number" id="orderVolume" required min="0.1" step="0.1" />
+        </label>
+        <label class="span-2">Cargo description
+          <textarea id="orderDescription" required placeholder="Example: boxes with products"></textarea>
+        </label>
+        <button class="btn primary" type="submit">Create request</button>
+      </form>
+      <p id="orderMessage" class="message"></p>
+    </section>
+
+    <section class="panel">
+      <h2>My requests</h2>
+      <div id="clientOrders" class="cards-list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
